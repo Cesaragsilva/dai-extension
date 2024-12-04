@@ -65,28 +65,6 @@
 
     console.log("Resposta recebida do service worker:", response);
     window.WPP.chat.sendTextMessage(user, response.data.response);
-
-        // try {
-        //     let response = await fetch('https://api.dai.tec.br/v1/chats', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //             'x-api-key': 'CajK9BCmOXv4Ke4xm4tsYrHesO9LlRdQ36I6vPQRmXGri1gphm03mhBxPc0brN36' 
-        //         },
-        //         body: JSON.stringify(requestData)
-        //     });
-
-        //     if (!response.ok) {
-        //         throw new Error(`Erro na chamada da API: ${response.statusText}`);
-        //     }
-
-        //     let data = await response.json();
-        //     console.log('Resposta da API:', data);
-
-        //     // window.WPP.chat.sendTextMessage(user, data.replyMessage);
-        // } catch (error) {
-        //     console.error('Erro ao chamar a API:', error);
-        // }
     }
 }
 
