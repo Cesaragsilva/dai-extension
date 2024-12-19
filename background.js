@@ -7,7 +7,7 @@ chrome.webNavigation.onCompleted.addListener(async (details) => {
     if (details.url.includes("web.whatsapp.com")) {
       await chrome.scripting.executeScript({
         target: { tabId: details.tabId },
-        files: ["assets/wppconnect-wa.js", "content.js"]
+        files: ["assets/wppconnect-wa.js", "index.js"]
       });
       console.log("Scripts injetados no WhatsApp Web.");
     }
@@ -23,7 +23,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-api-key': 'KEYYYYYYY'
+                'x-api-key': 'OrTbQhIWA94L36qgaYOxCBUqHzGnsMgZPKmprRa4u3m6NbO8XlYYWg0JNSyNwDJe'
             },
             body: JSON.stringify({
                 user,

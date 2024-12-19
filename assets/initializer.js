@@ -32,7 +32,7 @@
     
     // return;
 
-    if (user.includes('99133')) {
+    if (user.includes('98230')) {
       console.log('Tenta enviar mensagem via API...');
       const response = await new Promise((resolve, reject) => {
         const listener = (event) => {

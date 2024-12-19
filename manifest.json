@@ -1,34 +1,38 @@
 {
-    "manifest_version": 3,
     "name": "DAI Extension",
     "version": "1.0",
     "description": "Integração do WhatsAppWeb com a DAI.",
     "permissions": [
       "scripting", "activeTab", "webNavigation",
       "tabs",
-      "background", "contextMenus"
-    ],
-    "host_permissions": ["https://web.whatsapp.com/*", "https://api.dai.tec.br/*"],
-    "content_scripts": [
-      {
-        "matches": ["https://web.whatsapp.com/*"],
-        "js": ["content.js"]
-      }
+      "background", "contextMenus","storage"
     ],
     "background": {
       "service_worker": "background.js"
     },
+    "content_scripts": [
+      {
+        "matches": ["https://web.whatsapp.com/*"],
+        "js": ["index.js"]
+      }
+    ],
+    "host_permissions": ["https://web.whatsapp.com/*", "https://api.dai.tec.br/*"],
+    "manifest_version": 3,
+    "web_accessible_resources": [
+      {
+        "resources": ["assets/wppconnect-wa.js", "assets/initializer.js","build/dai-extension.js"],
+        "matches": ["https://web.whatsapp.com/*"]
+      }
+    ],
     "content_security_policy": {
       "extension_pages": "script-src 'self'; object-src 'self';",
       "sandbox": "sandbox allow-scripts; script-src 'self' https://api.dai.tec.br;"
     },
-    "web_accessible_resources": [
-      {
-        "resources": ["assets/wppconnect-wa.js", "assets/initializer.js"],
-        "matches": ["https://web.whatsapp.com/*"]
-      }
-    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
     "icons": {
+      "01": "icons/dai.png",
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
       "48": "icons/icon48.png",
